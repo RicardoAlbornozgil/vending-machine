@@ -1,0 +1,89 @@
+/* Ensure the entire page doesn't scroll */
+html, body {
+  overflow: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Root container for the entire app */
+#root {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box; /* Ensures padding and border are included in width/height */
+  overflow: hidden;
+}
+
+/* Keyframes for logo spinning */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation for the logo if no motion preference is set */
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Responsive styling for card elements */
+.card {
+  padding: 2em;
+  max-width: 100%; /* Ensures card content doesn't overflow */
+  box-sizing: border-box; /* Ensures padding is included in width */
+  flex-shrink: 1; /* Allows the card to shrink if needed */
+  width: 100%; /* Takes full width available */
+}
+
+/* Styling for the documentation link */
+.read-the-docs {
+  color: #888;
+  font-size: 1rem; /* Sets a relative font size */
+  margin-top: 1rem;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem; /* Reduce padding on smaller screens */
+  }
+
+  .card {
+    padding: 1rem; /* Reduce padding on cards for smaller screens */
+    font-size: 0.9rem; /* Adjust font size for better fit */
+  }
+
+  .read-the-docs {
+    font-size: 0.8rem; /* Smaller text on smaller screens */
+  }
+}
+
+/* Media query for extra small screens */
+@media (max-width: 480px) {
+  #root {
+    padding: 0.5rem; /* Further reduce padding on very small screens */
+  }
+
+  .card {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .read-the-docs {
+    font-size: 0.7rem;
+  }
+}
